@@ -9,7 +9,7 @@ part of 'status_response.dart';
 StatusResponse _$StatusResponseFromJson(Map<String, dynamic> json) =>
     StatusResponse(
       json['environment'] as String,
-      json['appAppleId'] as int?,
+      (json['appAppleId'] as num?)?.toInt(),
       json['bundleId'] as String,
       (json['data'] as List<dynamic>)
           .map((e) => SubscriptionGroupIdentifierItem.fromJson(
@@ -54,7 +54,7 @@ LastTransactionsItem _$LastTransactionsItemFromJson(
         Map<String, dynamic> json) =>
     LastTransactionsItem(
       json['originalTransactionId'] as String,
-      json['status'] as int,
+      (json['status'] as num).toInt(),
       json['signedRenewalInfo'] as String,
       json['signedTransactionInfo'] as String,
     );
@@ -72,16 +72,16 @@ JWSRenewalInfoDecodedPayload _$JWSRenewalInfoDecodedPayloadFromJson(
         Map<String, dynamic> json) =>
     JWSRenewalInfoDecodedPayload(
       json['autoRenewProductId'] as String,
-      json['autoRenewStatus'] as int,
-      json['expirationIntent'] as int?,
+      (json['autoRenewStatus'] as num).toInt(),
+      (json['expirationIntent'] as num?)?.toInt(),
       json['gracePeriodExpiresDate'] as String?,
       json['isInBillingRetryPeriod'] as bool?,
       json['offerIdentifier'] as String?,
-      json['offerType'] as int?,
+      (json['offerType'] as num?)?.toInt(),
       json['originalTransactionId'] as String,
-      json['priceIncreaseStatus'] as int?,
+      (json['priceIncreaseStatus'] as num?)?.toInt(),
       json['productId'] as String,
-      json['signedDate'] as int,
+      (json['signedDate'] as num).toInt(),
     );
 
 Map<String, dynamic> _$JWSRenewalInfoDecodedPayloadToJson(
@@ -114,18 +114,18 @@ JWSTransactionDecodedPayload _$JWSTransactionDecodedPayloadFromJson(
     JWSTransactionDecodedPayload(
       json['appAccountToken'] as String?,
       json['bundleId'] as String,
-      json['expiresDate'] as int?,
+      (json['expiresDate'] as num?)?.toInt(),
       json['inAppOwnershipType'] as String?,
       json['isUpgraded'] as bool?,
       json['offerIdentifier'] as String?,
-      json['offerType'] as String?,
-      json['originalPurchaseDate'] as int,
+      (json['offerType'] as num?)?.toInt(),
+      (json['originalPurchaseDate'] as num).toInt(),
       json['originalTransactionId'] as String,
       json['productId'] as String,
-      json['purchaseDate'] as int,
-      json['quantity'] as int?,
-      json['revocationDate'] as int?,
-      json['signedDate'] as int,
+      (json['purchaseDate'] as num).toInt(),
+      (json['quantity'] as num?)?.toInt(),
+      (json['revocationDate'] as num?)?.toInt(),
+      (json['signedDate'] as num).toInt(),
       json['subscriptionGroupIdentifier'] as String?,
       json['transactionId'] as String,
       json['type'] as String,

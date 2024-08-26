@@ -7,7 +7,7 @@ part of 'api_error.dart';
 // **************************************************************************
 
 ApiError _$ApiErrorFromJson(Map<String, dynamic> json) => ApiError(
-      json['errorCode'] as int,
+      (json['errorCode'] as num).toInt(),
       json['errorMessage'] as String,
     );
 

@@ -9,8 +9,8 @@ part of 'extend_renewal_date.dart';
 ExtendRenewalDateRequest _$ExtendRenewalDateRequestFromJson(
         Map<String, dynamic> json) =>
     ExtendRenewalDateRequest(
-      extendByDays: json['extendByDays'] as int,
-      extendReasonCode: json['extendReasonCode'] as int,
+      extendByDays: (json['extendByDays'] as num).toInt(),
+      extendReasonCode: (json['extendReasonCode'] as num).toInt(),
       requestIdentifier: json['requestIdentifier'] as String,
     );
 

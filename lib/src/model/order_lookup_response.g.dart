@@ -8,7 +8,7 @@ part of 'order_lookup_response.dart';
 
 OrderLookupResponse _$OrderLookupResponseFromJson(Map<String, dynamic> json) =>
     OrderLookupResponse(
-      status: json['status'] as int,
+      status: (json['status'] as num).toInt(),
       signedTransactions: (json['signedTransactions'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),

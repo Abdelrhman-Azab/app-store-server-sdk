@@ -192,7 +192,7 @@ class JWSTransactionDecodedPayload {
   final String? offerIdentifier;
 
   /// A value that represents the promotional offer type.
-  final String? offerType;
+  final int? offerType;
 
   /// The UNIX time, in milliseconds, that represents the purchase date of the original transaction identifier.
   final int originalPurchaseDate;

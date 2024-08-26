@@ -9,7 +9,7 @@ part of 'verify_receipt_response.dart';
 VerifyReceiptResponse _$VerifyReceiptResponseFromJson(
         Map<String, dynamic> json) =>
     VerifyReceiptResponse(
-      status: json['status'] as int,
+      status: (json['status'] as num).toInt(),
       environment: json['environment'] as String?,
       isRetryable: json['is-retryable'] as bool?,
       receipt: json['receipt'] == null
@@ -47,12 +47,13 @@ Map<String, dynamic> _$VerifyReceiptResponseToJson(
 
 Receipt _$ReceiptFromJson(Map<String, dynamic> json) => Receipt(
       receiptType: json['receipt_type'] as String?,
-      adamId: json['adam_id'] as int?,
-      appItemId: json['app_item_id'] as int?,
+      adamId: (json['adam_id'] as num?)?.toInt(),
+      appItemId: (json['app_item_id'] as num?)?.toInt(),
       bundleId: json['bundle_id'] as String?,
       applicationVersion: json['application_version'] as String?,
-      downloadId: json['download_id'] as int?,
-      versionExternalIdentifier: json['version_external_identifier'] as int?,
+      downloadId: (json['download_id'] as num?)?.toInt(),
+      versionExternalIdentifier:
+          (json['version_external_identifier'] as num?)?.toInt(),
       receiptCreationDate: json['receipt_creation_date'] as String?,
       receiptCreationDateMs: json['receipt_creation_date_ms'] as String?,
       receiptCreationDatePst: json['receipt_creation_date_pst'] as String?,

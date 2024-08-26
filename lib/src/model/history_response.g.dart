@@ -9,7 +9,7 @@ part of 'history_response.dart';
 HistoryResponse _$HistoryResponseFromJson(Map<String, dynamic> json) =>
     HistoryResponse(
       json['environment'] as String,
-      json['appAppleId'] as int?,
+      (json['appAppleId'] as num?)?.toInt(),
       json['bundleId'] as String,
       json['hasMore'] as bool,
       json['revision'] as String,
